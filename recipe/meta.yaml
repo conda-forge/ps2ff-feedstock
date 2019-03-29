@@ -23,7 +23,6 @@ requirements:
     - scipy
     - pandas
     - configobj
-    - impactutils
 
 test:
 

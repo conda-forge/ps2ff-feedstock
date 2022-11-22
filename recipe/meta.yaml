@@ -1,24 +1,24 @@
-{% set version = "1.5.2" %}
+{% set version = "1.5.6" %}
 
 package:
   name: ps2ff
   version: {{ version }}
 
 source:
-  url: https://github.com/usgs/ps2ff/archive/v{{ version }}.tar.gz
-  sha256: f6cfd4593b48e0e16b0bcfc5ffc51c0a98c509d10f3045004b3fe88f5993b7f2
+  url: https://code.usgs.gov/ghsc/esi/ps2ff/-/archive/v{{ version }}/ps2ff-v{{ version }}.tar.gz
+  sha256: 143219006727e19d8080e73b698033422fdce7ba23d3d3892d81008fd43e0988
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
-    - python >=3.6
+    - python >=3.8
     - pip
   run:
-    - python >=3.6
+    - python >=3.8
     - numpy
     - scipy
     - pandas
@@ -30,7 +30,7 @@ test:
     - ps2ff
 
 about:
-  home: https://github.com/usgs/ps2ff
+  home: https://code.usgs.gov/ghsc/esi/ps2ff
   license: Public Domain
   summary: 'Produce approximated earthquake rupture distances from point source information.'
   license_family: Public Domain

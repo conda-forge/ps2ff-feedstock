@@ -31,7 +31,7 @@ test:
 
 about:
   home: https://code.usgs.gov/ghsc/esi/ps2ff
-  license: Public Domain
+  license: CC-PDDC
   summary: 'Produce approximated earthquake rupture distances from point source information.'
   license_family: Public Domain
   license_file: LICENSE.md
@@ -41,6 +41,3 @@ extra:
     - mhearne-usgs
     - emthompson-usgs
     - cbworden
-
-
-    

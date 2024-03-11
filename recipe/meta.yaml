@@ -1,4 +1,4 @@
-{% set version = "1.5.6" %}
+{% set version = "1.5.7" %}
 
 package:
   name: ps2ff
@@ -6,15 +6,15 @@ package:
 
 source:
   url: https://code.usgs.gov/ghsc/esi/ps2ff/-/archive/v{{ version }}/ps2ff-v{{ version }}.tar.gz
-  sha256: 143219006727e19d8080e73b698033422fdce7ba23d3d3892d81008fd43e0988
+  sha256: a02f95117b12ad230a7f26a9bd7455602f786b008b50dd21507d5bba07ef55b2
 
 build:
   number: 0
   noarch: python
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
+  host:
     - python >=3.8
     - pip
   run:

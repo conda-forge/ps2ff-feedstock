@@ -1,37 +1,49 @@
-{% set version = "1.5.7" %}
+{% set name = "ps2ff" %}
+{% set version = "1.5.8" %}
+{% set python_min = "3.10" %}
 
 package:
-  name: ps2ff
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://code.usgs.gov/ghsc/esi/ps2ff/-/archive/v{{ version }}/ps2ff-v{{ version }}.tar.gz
-  sha256: a02f95117b12ad230a7f26a9bd7455602f786b008b50dd21507d5bba07ef55b2
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ps2ff-{{ version }}.tar.gz
+  sha256: 183321e29708ed3e9ebee95247c3c676a3d8f6ff5d4d9f1ae9a79629ab3e8018
 
 build:
-  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
+  number: 0
+  entry_points:
+    - run_ps2ff = ps2ff.bin.run_ps2ff:cli
+    - run_ps2ff_single_event = ps2ff.bin.run_ps2ff_single_event:cli
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
+    - setuptools >=42
+    - setuptools-scm >=3.4
     - pip
+    - wheel
   run:
-    - python >=3.8
-    - numpy
-    - scipy
-    - pandas
-    - configobj
+    - python >={{ python_min }}
+    - configobj >=5.0.6
+    - numpy >=1.21,<2.0
+    - scipy >=1.7
+    - pandas >=1.0
 
 test:
-
+  requires:
+    - python {{ python_min }}
   imports:
     - ps2ff
+  commands:
+    - run_ps2ff --help
+    - run_ps2ff_single_event --help
 
 about:
   home: https://code.usgs.gov/ghsc/esi/ps2ff
-  license: CC-PDDC
+  license: LicenseRef-PublicDomain
   summary: 'Produce approximated earthquake rupture distances from point source information.'
   license_family: Public Domain
   license_file: LICENSE.md
@@ -41,3 +53,4 @@ extra:
     - mhearne-usgs
     - emthompson-usgs
     - cbworden
+    - ocefpaf

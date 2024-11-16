@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org,/packages/source/{{ name[0] }}/{{ name }}/ps2ff-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ps2ff-{{ version }}.tar.gz
   sha256: 183321e29708ed3e9ebee95247c3c676a3d8f6ff5d4d9f1ae9a79629ab3e8018
 
 build:

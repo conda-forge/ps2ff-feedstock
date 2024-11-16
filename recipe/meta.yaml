@@ -24,10 +24,10 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - numpy>=1.21,<2.0
-    - scipy>=1.7
-    - pandas>=1.0
-    - configobj>=5.0.6
+    - configobj >=5.0.6
+    - numpy >=1.21,<2.0
+    - scipy >=1.7
+    - pandas >=1.0
 
 test:
   requires:

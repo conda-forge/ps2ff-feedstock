@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ps2ff-feedstock
 
 Home: https://code.usgs.gov/ghsc/esi/ps2ff
 
-Package license: CC-PDDC
+Package license: LicenseRef-PublicDomain
 
 Summary: Produce approximated earthquake rupture distances from point source information.
 
@@ -146,4 +146,5 @@ Feedstock Maintainers
 * [@cbworden](https://github.com/cbworden/)
 * [@emthompson-usgs](https://github.com/emthompson-usgs/)
 * [@mhearne-usgs](https://github.com/mhearne-usgs/)
+* [@ocefpaf](https://github.com/ocefpaf/)
 
